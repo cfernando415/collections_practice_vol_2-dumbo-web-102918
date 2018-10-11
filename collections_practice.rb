@@ -19,14 +19,28 @@ def count_elements(arr)
   arr.group_by(&:itself).map{|k, v| k.merge(count: v.length)}
 end 
 
-def merge_data
-  
+def merge_data(keys, data)
+  keys.each do |name_hash|
+    data.each do |hash|
+      name_hash.merge!(hash[name_hash[:first_name]])
+    end
+  end
 end 
 
-def find_cool
-  
+def find_cool(array)
+  array.select {|entry| entry if entry.has_value?("cool")}  
 end
 
-def organize_schools
-  
+def organize_schools(schools)
+  by_location = {}
+    schools.each do |school, location_hash|
+      location_hash.each do |symbol, location|
+        if by_location[location] == nil
+          by_location[location] = [school]
+        else
+          by_location[location] << school
+        end
+      end
+    end
+    by_location
 end
