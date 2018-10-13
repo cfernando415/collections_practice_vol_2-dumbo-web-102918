@@ -32,6 +32,7 @@ def find_cool(array)
 end
 
 def organize_schools(schools)
+<<<<<<< HEAD
   by_location = {}
     schools.each do |school, location_hash|
       location_hash.each do |symbol, location|
@@ -43,4 +44,8 @@ def organize_schools(schools)
       end
     end
     by_location
+=======
+  
+  
+>>>>>>> 96748d83e47b2774a04d4008e95cc7ec5f3ca9e3
 end
